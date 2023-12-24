@@ -5,7 +5,14 @@ export type PokeType = {
     url?: string;
 }
 
-export type AllPokemonsResults = {
+export type AllPokemonsResult = {
     name: string;
     url: string;
 }
+
+export type PokemonsByTypeResult = {
+    pokemon: {
+      name: string;
+      url: string;
+    };
+  };
