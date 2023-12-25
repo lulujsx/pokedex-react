@@ -1,5 +1,5 @@
 import { PokemonCard } from '../PokemonCard';
-// import styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
     pokemonUrls?: string[] | null,
@@ -9,12 +9,12 @@ interface Props {
 
 export const PokemonList = ({ pokemonUrls, page, perPage } : Props) => {
   return (
-    <div>
-        {
-            pokemonUrls?.map((pokemonUrl) =>(
-                <PokemonCard key={pokemonUrl} url={pokemonUrl}/>
-            ))
-        }
+    <div className={styles.pokemons}>
+       {pokemonUrls
+        ?.slice((page - 1) * perPage, (page - 1) * perPage + perPage)
+        .map((pokemonUrl) => (
+          <PokemonCard key={pokemonUrl} url={pokemonUrl} />
+        ))}
     </div>
   )
 }
