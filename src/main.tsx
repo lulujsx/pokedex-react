@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Home/>
   },
   {
-    path: '/pokeId',
+    path: '/:pokeId',
     element: <PokeDetail/>
   }
 ])

@@ -5,6 +5,7 @@ import { PokemonContext } from '../../context/PokemonContext';
 import { PokemonList } from '../../components/PokemonList';
 import { Pagination } from '../../components/Pagination';
 import { usePagination } from "../../hooks/usePagination";
+import { Filters } from '../../components/Filters';
 
 
 export const Home = () => {
@@ -21,6 +22,7 @@ export const Home = () => {
           <span>Pokedex</span>
         </div>
       </header>
+      <Filters/>
       <PokemonList pokemonUrls={pokemonsFiltered} page={page} perPage={perPage}/>
       <Pagination
         page={page}
