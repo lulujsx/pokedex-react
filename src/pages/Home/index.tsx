@@ -18,19 +18,21 @@ export const Home = () => {
     <div className={styles.home}>
       <header>
         <div onClick={backToHome}>
-          <PokeballIconSmall/>
-          <span>Pokedex</span>
+          <PokeballIconSmall fill="white"/>
+          <span>Pokédex</span>
         </div>
       </header>
-      <Filters/>
-      <PokemonList pokemonUrls={pokemonsFiltered} page={page} perPage={perPage}/>
-      <Pagination
-        page={page}
-        perPage={perPage}
-        nextPage={nextPage}
-        previousPage={previousPage}
-        maxItems={pokemonsFiltered?.length!}
-      />
+      <div id="container" className={styles.container}>
+        <Filters/>
+        <PokemonList pokemonUrls={pokemonsFiltered} page={page} perPage={perPage}/>
+        <Pagination
+          page={page}
+          perPage={perPage}
+          nextPage={nextPage}
+          previousPage={previousPage}
+          maxItems={pokemonsFiltered?.length!}
+        />
+      </div>
     </div>
   )
 }
